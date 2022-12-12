@@ -1,0 +1,87 @@
+<html>
+    <head>
+<title>
+  Task Manager
+</title>
+<script src="https://kit.fontawesome.com/1d78ac0dfc.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body align="center">
+  <fieldset>
+
+    <legend>
+      <h2> CREATE TASK</h2>
+    </legend>
+
+    <form class="taskform">
+    <label for="id">Task ID</label>&nbsp;&nbsp;&nbsp;
+      <input type="text" id="id" name="id" placeholder="Task id"><br><br>
+
+      <label for="name">Task name:</label>&nbsp;
+      <input type="text" id="name" name="name" placeholder="Task name"><br><br>
+
+      
+      <label for="taskstatus">Task Status</label>
+
+      <select name="tstatus" id="status">&nbsp;&nbsp;&nbsp;&nbsp;
+        <option value="Ongoing">Ongoing</option>
+        <option value="Completed">Completed</option>
+        <option value="Pending">Pending</option>
+      </select><br><br>
+
+
+
+
+      <label for="start time">Start Time</label>&nbsp;&nbsp;
+      <input type="time" id="start time" name="start time" placeholder="Start Time"><br><br>
+      
+
+      <label for="end time">End Time</label>&nbsp;&nbsp;
+      <input type="time" id="end time" name="end time" placeholder="End Time"><br><br>
+    <br>
+
+    <input type="button" value="Submit" onClick="validate(event)">
+
+      <input type="reset" value="Reset">
+    </form>
+
+</fieldset>
+<br><br>
+<div id="msg" class="tasklist" style="color:red; font-size:30px;text-align: center;""> </div>
+<fieldset>
+  <legend>
+    <h2> Data From Local Storage</h2>
+  </legend>
+  <form>
+    <table id="taskdetails" border="1" align="center">
+      <thead>
+        <td onclick="sortTable(0)">TaskId</td>
+        <td onclick="sortTable(1)">Task Name</td>
+        <td onclick="sortTable(2)">Status</td>
+        <td>Start Time</td>
+        <td>End Time</td>
+        <td>Action</td>
+      </thead>
+      <tbody>
+
+      </tbody>
+    </table>
+  
+  </form>
+  
+</fieldset>
+<fieldset>
+<legend>
+  <h2> Search Data</h2>
+</legend>
+<input type="text" placeholder="Search.." name="search" id="searchbtn" onkeyup="searchTableColumns()">
+<button><i class="fa-solid fa-magnifying-glass"></i></button>
+</fieldset>
+
+
+<script type="text/javascript" src="script.js"></script>
+
+
+</body>
+</html>
